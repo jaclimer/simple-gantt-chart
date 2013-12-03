@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Simple Gantt Chart</title>
+	
+    <link href="css/reset.css" rel="stylesheet" />
+	<link href="css/jquery.ganttchart.css" rel="stylesheet" />
+	<style> 
+		h2 { font-weight:bold;font-size:large; }
+		#chart1 { width:100%;height:350px;overflow:hidden;font-family:calibri,verdana,arial; }
+	</style>
+	
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.dragscroll.js"></script>
+    <script src="js/date.js"></script>     
+    <script src="js/jquery.ganttchart.js"></script>
+	
+	<script src="js/testdata.js"></script>		 
+	<script> 
+		var ganttChart1;
+		
+		$(document).ready(function () {
+			var chartOptions = {
+				zoom: 2,
+				data:testdata
+				//dataSourceUrl: '/Home/GetTasks'
+			};
+			
+			// Setup chart with optional params
+			ganttChart1 = new GanttChart();
+			ganttChart1.init('chart1', $('#chart1'), chartOptions);
+	 
+			$('#collapseTasks').click(function() { collapseTasks(); });
+		});
+		
+		function zoomIn() {
+			ganttChart1.zoomIn();
+		}
+		
+		function zoomOut() {
+			ganttChart1.zoomOut();
+		}
+		
+		function collapseTasks() {
+			if ($("#collapseTasks").is(":checked")) {
+				ganttChart1.collapseTasks();
+			} else {
+				ganttChart1.expandTasks();
+			}
+			
+		}
+	</script>
+</head>
+<body>
+    <div>
+		<h2>Simple Gantt Chart</h2>
+		
+		<hr/>
+		
+		<input type="button" value="Zoom In" onclick="zoomIn();"/> &nbsp;&nbsp; <input type="button" value="Zoom Out" onclick="zoomOut();"/> &nbsp;&nbsp; (You can roll your middle mouse button to zoom as well)
+		
+		<hr/>
+		
+		<label><input type="checkbox" id="collapseTasks"/> Collapse Tasks (Show only root level tasks)</label>
+		
+		<hr/>
+		 
+		<div id="chart1"></div>
+		
+		<hr/>
+		
+		(<a href="js/testdata.js">test data</a>)
+
+    </div>
+</body>
+</html>
+

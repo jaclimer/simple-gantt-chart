@@ -1,0 +1,27 @@
+﻿/* Task List */
+.gantt-task-list-panel { background-color:#efefef;display:inline-block;vertical-align: top;overflow:hidden; }
+.gantt-task-list-header { position:absolute;background-color:#eee;white-space:nowrap;overflow:hidden;font-weight:bold;z-index:100;}
+.gantt-task-list-header-label { padding:6px 0px 0px 3px;overflow: hidden; }
+.gantt-task-list { overflow:hidden; }
+.gantt-task-list-label {  }
+.gantt-task-list-table { width: 100%; position:relative; } 
+.gantt-task-list-table tr[data-level="0"] { font-weight:bold;border-top: 2px solid #000; }
+.gantt-task-list-table tr td { border:1px solid #fff;border-right: 2px solid #000;overflow:hidden;text-overflow:clip;white-space:nowrap }
+
+/* Gantt Chart*/
+.gantt-chart-panel { background-color:#fff;display: inline-block;vertical-align: top; overflow:hidden;cursor:move }
+.gantt-chart-header { position: absolute;background-color:#eee;white-space:nowrap;overflow:hidden;z-index: 100; }
+.gantt-chart-header tr th { border: 1px solid #fff;font-size: 14px;overflow:hidden;text-overflow:clip;white-space:nowrap; }
+.gantt-chart-header tr th.weekend { background-color:#ccc;}
+
+.gantt-chart-container { position: relative; display: block; overflow:hidden; } 
+.gantt-chart { }
+.gantt-chart-table { }
+.gantt-chart-table tr td { border:1px dashed silver;overflow:hidden;text-overflow:clip;white-space:nowrap;}
+.gantt-chart-table tr td.weekend { background-color:#f7f7fb; }
+
+.gantt-chart-taskbar {position:absolute; display:block;border:1px solid #000;overflow:hidden;text-overflow:clip;z-index:2;}
+.gantt-chart-taskbar-progressbar { height: 2px; background-color:green; position:absolute;}
+.gantt-chart-taskbar-milestone { height:16px; width:16px; background:url('/Content/Images/milestone.png'); position:absolute;}
+
+.gantt-line-today { width:1px;border-left: 2px solid red;position:absolute;z-index:1;top:0px;}
